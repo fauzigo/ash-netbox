@@ -35,6 +35,7 @@ netbox::config::gunicorn_settings:
   timeout: 120
   max_requests: 5000
   max_requests_jitter: 500
-  access_logfile: "'/var/log/netbox/netbox-access.log'"
-  error_logfile: "'/var/log/netbox/netbox-error.log'"
+  accesslog: "'/var/log/netbox/netbox-access.log'"
+  errorlog: "'/var/log/netbox/netbox-error.log'"
   pidfile: "'/var/tmp/netbox.pid'"
+  loglevel: "'warning'"

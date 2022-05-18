@@ -116,7 +116,7 @@ BANNER_LOGIN = '<%= $banner_login %>'
 BASE_PATH = '<%= $base_path %>'
 
 # Cache timeout in seconds. Set to 0 to dissable caching. Defaults to 900 (15 minutes)
-CACHE_TIMEOUT = 900
+#CACHE_TIMEOUT = 900
 
 # Maximum number of days to retain logged changes. Set to 0 to retain changes indefinitely. (Default: 90)
 CHANGELOG_RETENTION = 90
@@ -247,6 +247,7 @@ PREFER_IPV4 = False
 # local file storage instead. (This can be useful for enabling authentication on a standby instance with read-only
 # database access.) Note that the user as which NetBox runs must have read and write permissions to this path.
 SESSION_FILE_PATH = None
+SESSION_COOKIE_NAME = 'sessionid'
 
 # Time zone (default: UTC)
 TIME_ZONE = '<%= $time_zone %>'
