@@ -29,12 +29,12 @@ netbox::install::install_method: 'git_clone'
 netbox::install::manage_packages: false
 
 netbox::config::gunicorn_settings:
-  bind: 'unix:/run/netbox/gunicorn.socket'
+  bind: "'unix:/run/netbox/gunicorn.socket'"
   workers: 5
   threads: 3
   timeout: 120
   max_requests: 5000
   max_requests_jitter: 500
-
-netbox::service::access_logfile: '/var/log/netbox/netbox-access.log'
-netbox::service::error_logfile: '/var/log/netbox/netbox-error.log'
+  access_logfile: "'/var/log/netbox/netbox-access.log'"
+  error_logfile: "'/var/log/netbox/netbox-error.log'"
+  pidfile: "'/var/tmp/netbox.pid'"

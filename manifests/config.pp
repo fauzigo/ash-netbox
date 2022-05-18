@@ -194,8 +194,14 @@ class netbox::config (
     mode   => '0755',
   }
 
+  if $netbox::gunicorn_options != {}  {
+    $gunicorn_real_settings = deep_merge($gunicorn_settings, $netbox::gunicorn_options)
+  }else{
+    $gunicorn_real_settings = $gunicorn_settings
+  }
+
   file { $gunicorn_file:
-    content => epp('netbox/gunicorn.py.epp', $gunicorn_settings),
+    content => epp('netbox/gunicorn.py.epp', {gunicorn_settings => $gunicorn_real_settings}),
     owner   => $user,
     group   => $group,
     mode    => '0644',

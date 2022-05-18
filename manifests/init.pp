@@ -273,6 +273,7 @@ class netbox (
   # Added fauzi@uchicago.edu
   Hash $redis_options                           = {},
   Hash $email_options                           = {},
+  Optional[Hash] $gunicorn_options              = {},
 ) {
 
   Class['netbox::install'] -> Class['netbox::config'] ~> Class['netbox::service']
